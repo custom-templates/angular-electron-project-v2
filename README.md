@@ -1,4 +1,8 @@
-# AngularElectronProjectV2
+# Angular Electron Project v2
+
+Special Thanks to https://github.com/marcialwushu/angular-electron for the Typescript example setup.
+
+----------------------------------------------
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
 
