@@ -2,6 +2,8 @@
 
 Special Thanks to https://github.com/marcialwushu/angular-electron for the Typescript example setup.
 
+Especially the commit where electron setup done for the project: https://github.com/marcialwushu/angular-electron/commit/1743da3587beb98624aff4f4ea82f408e43f655a
+
 ----------------------------------------------
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
