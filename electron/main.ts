@@ -8,26 +8,40 @@ let win: BrowserWindow;
 app.on('ready', createWindow)
 
 app.on('activate', () => {
-  if (win === null) {
-    createWindow()
-  }
+    // macOS specific close process
+    if (win === null) {
+        createWindow()
+    }
 })
 
+// Quit when all windows are closed.  
+app.on('window-all-closed', function () {
+
+    // On macOS specific close process  
+    if (process.platform !== 'darwin') {
+        app.quit()
+    }
+})
 
 function createWindow() {
-  win = new BrowserWindow({ width: 800, height:600 })
-
-  win.loadURL(
-    url.format({
-      pathname: path.join(__dirname, `/../../dist/angular-electron-project-v2/index.html`),
-      protocol: 'file:',
-      slashes: true,
+    win = new BrowserWindow({
+        width: 800,
+        height: 600,
+        backgroundColor: '#ffffff',
     })
-  )
+    win.setMenu(null);
+    win.loadURL(
+        url.format({
+            pathname: path.join(__dirname, `/../../dist/angular-electron-project-v2/index.html`),
+            protocol: 'file:',
+            slashes: true,
+        })
+    )
+    // uncomment below to open the DevTools.
+    // win.webContents.openDevTools();
 
-  win.webContents.openDevTools()
-
-  win.on('closed', () => {
-    win = null
-  })
+    // Event when the window is closed.
+    win.on('closed', () => {
+        win = null
+    })
 }
